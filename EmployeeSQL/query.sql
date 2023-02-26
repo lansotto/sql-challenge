@@ -56,4 +56,3 @@ FROM employees
 GROUP BY last_name
 ORDER BY COUNT(last_name) DESC;
 
-select count(emp_no) from employees;
