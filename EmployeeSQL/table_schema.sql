@@ -14,22 +14,28 @@ create table departments (
 	);
 	
 create table dept_emp (
-	emp_no int foreign key,
-	dept_no VARCHAR(4) foreign key
+	emp_no int,
+	dept_no VARCHAR(4),
+	foreign key (emp_no) references employees (emp_no),
+	foreign key (dept_no) references departments (dept_no)
 	);
 	
 create table dept_manager (
-	dept_no VARCHAR(4) foreign key,
-	emp_no int foreign key
+	dept_no VARCHAR(4),
+	emp_no int,
+	foreign key (dept_no) references departments (dept_no),
+	foreign key (emp_no) references employees (emp_no)
 	);
 	
 create table salaries (
-	emp_no int foreign key,
-	salary int
+	emp_no int,
+	salary int,
+	foreign key (emp_no) references employees (emp_no)
 	);
 	
 create table titles (
 	title_id VARCHAR (5) not null primary key,
 	title VARCHAR(30) not null
 	);
+	
 	
